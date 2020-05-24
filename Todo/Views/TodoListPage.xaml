@@ -33,7 +33,7 @@
                                 </Style>
                             </Label.Style>
                         </Label>
-                        <Image Source="check.png" HorizontalOptions="End" IsVisible="{Binding Done}" />
+                        <Image Source="tick.png" HorizontalOptions="End" IsVisible="{Binding Done}" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

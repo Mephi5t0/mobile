@@ -40,7 +40,7 @@ namespace Todo.Views
 
                     var tick = new Image
                     {
-                        Source = ImageSource.FromFile("check.png"),
+                        Source = ImageSource.FromFile("tick.png"),
                         HorizontalOptions = LayoutOptions.End
                     };
                     tick.SetBinding(IsVisibleProperty, "Done");

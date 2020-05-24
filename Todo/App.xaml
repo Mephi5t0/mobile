@@ -4,8 +4,7 @@
              x:Class="Todo.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="primaryGreen">#91CA47</Color>
-            <Color x:Key="primaryDarkGreen">#6FA22E</Color>
+            <Color x:Key="primaryBlue">#0000FF</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

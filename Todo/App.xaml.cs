@@ -16,7 +16,7 @@ namespace Todo
 
             var nav = new NavigationPage(new TodoListPage())
             {
-                BarBackgroundColor = (Color) Current.Resources["primaryGreen"], BarTextColor = Color.White
+                BarBackgroundColor = (Color) Current.Resources["primaryBlue"], BarTextColor = Color.White
             };
 
             MainPage = nav;
