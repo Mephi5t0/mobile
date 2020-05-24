@@ -1,6 +1,7 @@
 ﻿using System;
 using Todo.Data;
 using Todo.Models;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Todo.Views
@@ -29,6 +30,30 @@ namespace Todo.Views
         private async void OnCancelClicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync().ConfigureAwait(true);
+        }
+
+        private async void OnSendClicked(object sender, EventArgs e)
+        {
+            var todoItem = (TodoItem)BindingContext;
+
+            try
+            {
+                var message = new EmailMessage
+                {
+                    Subject = todoItem.Name,
+                    Body = todoItem.Notes,
+                };
+
+                await Email.ComposeAsync(message).ConfigureAwait(true);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                await DisplayAlert("Warning", "Sorry, your device doesn`t support emails", "OK").ConfigureAwait(true);
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Warning", "Email wasn`t sent, please try later", "OK").ConfigureAwait(true);
+            }
         }
     }
 }
